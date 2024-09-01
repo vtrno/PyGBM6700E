@@ -7,5 +7,5 @@ Everything related to one specific assignment can be found in the assignment fol
 
 ## Acknowledgements
 Docs are built using [pdoc](https://github.com/mitmproxy/pdoc)  
-Vizualizations are handled using [plotly](https://plotly.com/)
+Vizualizations are handled using [plotly](https://plotly.com/)  
 The rest is based on numpy and mat4py
