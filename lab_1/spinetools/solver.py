@@ -1,9 +1,19 @@
 from numpy.linalg import lstsq
 import numpy as np
 
-def dlt(a):
+def dlt(a:np.ndarray):
     """
     Performs the DLT
+
+    Parameters
+    ----------
+    a : np.ndarray
+        Linear equation system matrix so that AX = 0
+
+    Returns
+    -------
+    np.ndarray
+        X vector that solves AX = 0
     """
     m = -a[:, [-1]]
     a = a[:, :-1]
