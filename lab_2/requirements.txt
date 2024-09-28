@@ -1,6 +1,6 @@
-mat4py
+imageio==2.35.1
+mat4py==0.6.0
+matplotlib==3.9.2
 numpy==1.23.5
-pandas
-plotly
-kaleido
-nbformat
+plotly==5.22.0
+scipy==1.14.1
