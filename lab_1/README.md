@@ -20,4 +20,4 @@ In your python script : `import spinetools`. You can then access the following m
 
 ## Documentation
 
-Documentation is available in the `docs`folder. Just open the [index.html](docs/index.html) file in your favorite web browser !
+Documentation is available in the [wiki](https://github.com/vtrno/PyGBM6700E/wiki) section.
