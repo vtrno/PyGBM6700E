@@ -4,6 +4,8 @@ import numpy as np
 from scipy.optimize import least_squares
 from scipy.spatial.transform import Rotation as R
 
+from . import solver
+
 
 def build_view_geometry(sid:float, sod:float, dp:float, alpha:float, beta:float, im_size:tuple[float]) -> dict[str, np.ndarray]:
 	"""Builds the view geometry parameters from DICOM parameters
@@ -197,3 +199,31 @@ def refine_cam_param(x, X, K, R, t, rerr=2**-52, iter=30):
 	t_refined = result.x[9:12].reshape(3, 1)
 	
 	return K, R_refined, t_refined
+
+def calculate_3d_point(u0:float, v0:float, u1:float, v1:float, L0:np.ndarray, L1:np.ndarray) -> np.ndarray:
+    """
+    Calculates a 3D point from 2 2D coordinates pairs and L0 & L1 DLT calibration coefficients
+
+    Parameters
+    ----------
+    u0 : float
+        point 1 x-coordinate
+    v0 : float
+        point 1 y-coordinate
+    u1 : float
+        point 2 x-coordinate
+    v1 : float
+        point 2 y-coordinate
+    L0 : np.ndarray
+        DLT coefficients for view 1
+    L1 : np.ndarray
+        DLT coefficients for view 2
+    """
+    A = []
+
+    A.append([u0*L0[8]-L0[0], u0*L0[9]-L0[1], L0[10]*u0-L0[2], -L0[3] + u0])
+    A.append([v0*L0[8]-L0[4], v0*L0[9]-L0[5], L0[10]*v0-L0[6], -L0[7] + v0])
+    A.append([u1*L1[8]-L1[0], u1*L1[9]-L1[1], L1[10]*u1-L1[2], -L1[3]+u1])
+    A.append([v1*L1[8]-L1[4], v1*L1[9]-L1[5], L1[10]*v1-L1[6], -L1[7]+v1])
+    
+    return solver.dlt(np.array(A))
