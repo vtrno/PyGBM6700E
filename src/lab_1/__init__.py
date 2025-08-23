@@ -1,5 +1,5 @@
 """
-SpineTools was built for the course GBM6700E at Polytechnique Montréal. It's meant to take over Matlab, which was used before, and provide easy access to Python tools for reading and processing the data. 
+Lab 1 is built for the course GBM6700E at Polytechnique Montréal. It's meant to take over Matlab, which was used before, and provide easy access to Python tools for reading and processing the data. 
 
 Modules :  
     - io : Handle inputs and outputs  

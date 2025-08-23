@@ -28,7 +28,7 @@ def load_data(mat_file:str) -> Dict:
     data = loadmat(mat_file)
     return data
 
-def process_files(directory:str) -> pd.DataFrame:
+def process_files(directory:str) -> dict:
     """
     Process mat files in a directory to create a dataframe aggregating data from different views
 
@@ -39,7 +39,7 @@ def process_files(directory:str) -> pd.DataFrame:
 
     Returns
     -------
-    pd.DataFrame
+    dict
         Dict with 2 keys : 2d and 3d, each associated to a dataframe with columns 'view', 'bead', 'x', 'y' ('z' for the 3D view)
     """
     files = [os.path.realpath(os.path.join(directory, x)) for x in os.listdir(directory) if (x.endswith('.mat') and 'beads' in x.lower())]

@@ -17,12 +17,6 @@ def build_view_geometry(sid:float, sod:float, dp:float, alpha:float, beta:float,
 	    alpha(float): primary angle in degrees
 	    beta(float): secondary angle in degrees
 	    im_size(tuple[float]): array of 2 integers giving image size in pixels
-	    sid:float: 
-	    sod:float: 
-	    dp:float: 
-	    alpha:float: 
-	    beta:float: 
-	    im_size:tuple[float]: 
 
 	Returns:
 	    geometry(dict): dict with two keys ('source', 'detector'). The 'source' key contains a dictionary with parameters used to build the view, such as u0, v0, f, K, R, T, P, world_position, sid, sod and angles.

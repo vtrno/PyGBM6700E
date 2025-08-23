@@ -1,0 +1,10 @@
+numpy<2.0.0
+mat4py
+matplotlib
+pandas
+plotly
+kaleido
+imageio
+nbformat
+ipykernel
+scipy
