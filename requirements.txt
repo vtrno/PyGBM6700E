@@ -8,3 +8,4 @@ imageio
 nbformat
 ipykernel
 scipy
+tqdm
