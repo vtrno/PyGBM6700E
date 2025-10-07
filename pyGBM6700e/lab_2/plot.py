@@ -1,4 +1,5 @@
 import warnings
+from typing import Tuple
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -8,7 +9,7 @@ warnings.filterwarnings("ignore")
 COLORS = list(plt.colormaps.get("Set1").colors)
 COLORS.pop(5)
 
-def imshow(points:np.ndarray,image_size:tuple[int], labels:np.ndarray = None, figure_title:str = None) -> None:
+def imshow(points:np.ndarray,image_size:Tuple[int], labels:np.ndarray = None, figure_title:str = None) -> None:
     """
     Displays a scatter plot of points.
 

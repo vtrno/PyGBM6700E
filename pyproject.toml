@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyGBM6700e"
-version = "2.0.1"
+version = "2.0.2"
 authors = [
   { name="Victor NOGUES", email="victor.nogues@etud.polymtl.ca" },
 ]

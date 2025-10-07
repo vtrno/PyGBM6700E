@@ -3,11 +3,11 @@ from functools import reduce
 import numpy as np
 from scipy.optimize import least_squares
 from scipy.spatial.transform import Rotation as R
-
+from typing import Tuple, Dict
 from . import solver
 
 
-def build_view_geometry(sid:float, sod:float, dp:float, alpha:float, beta:float, im_size:tuple[float]) -> dict[str, np.ndarray]:
+def build_view_geometry(sid:float, sod:float, dp:float, alpha:float, beta:float, im_size:Tuple[float]) -> Dict[str, np.ndarray]:
 	"""Builds the view geometry parameters from DICOM parameters
 
 	Args:
@@ -231,7 +231,7 @@ def __art(P):
     A = A / A[2, 2]
     return A, R, t
 
-def rectify(po1: np.ndarray, po2: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+def rectify(po1: np.ndarray, po2: np.ndarray) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     """
     Rectify two projection matrices.
 
